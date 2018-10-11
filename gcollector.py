@@ -1,7 +1,3 @@
-#this program says hello and asks me for my name
-
-print("Hello")
-print("What's your name?")
-
-myName = input()
-print("Welcome" + myName)
+#this program was made to automate the process of cleaning up
+#your downloads folder
+#SageDark
