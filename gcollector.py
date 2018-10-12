@@ -6,6 +6,7 @@ import os
 import glob
 
 path = 'C:\\Users\\USER\\Downloads'
+timediff = 2592000
 
 #get the number of files in the directory
 onlyfiles = next(os.walk(path))[2]
