@@ -13,11 +13,10 @@ print (len(onlyfiles))
 
 #get a list with all filenames
 filenames = glob.glob(path + "\\*")
+for files in range(len(onlyfiles)):
+    filenames[files] = filenames[files].strip(path)
+
 
 def get_date(filename):
     lastmodified = os.path.getmtime(path + '\\' + filename)
     return lastmodified
-
-
-for files in range(len(onlyfiles)):
-    print (filenames[files])
