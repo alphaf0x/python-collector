@@ -1,18 +1,19 @@
-#this program was made to automate the process of cleaning up your downloads folder
-#Written in Python 3.7
-#SageDark
+# This program was made to automate the process of cleaning up
+#  your downloads folder
+# Written in Python 3.7
+# SageDark
 
 import os
 import glob
 
-path = 'C:\\Users\\USER\\Downloads'
+path = 'C:\\Users\\contr\\Downloads'
 timediff = 2592000
 
-#get the number of files in the directory
+# get the number of files in the directory
 onlyfiles = next(os.walk(path))[2]
-print (len(onlyfiles))
+print(len(onlyfiles))
 
-#get a list with all filenames
+# get a list with all filenames
 filenames = glob.glob(path + "\\*")
 for files in range(len(onlyfiles)):
     filenames[files] = filenames[files].strip(path)
