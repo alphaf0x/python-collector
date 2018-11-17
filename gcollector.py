@@ -14,22 +14,25 @@ timediff = 2592000
 
 # get the number of files in the directory
 onlyfiles = next(os.walk(path))[2]
-print(len(onlyfiles))
+
+
+# function that gets the modification date
+# of the file and calculates how  many days ago it was modified
+def get_date(filename):
+    lastmodified = (time.time()) - os.path.getmtime(filenames[files])
+    return lastmodified
+
+
+def remove_file(filename):
+    os.remove(filename)
+    print(filename + ' removed.')
+
 
 # get a list with all filenames
 filenames = glob.glob(path + "\\*")
 modifiedFiles = 0
 for files in range(len(onlyfiles)):
-        if (time.time()) - os.path.getmtime(filenames[files]) > timediff:
+        if get_date(filenames[files]) > timediff:
             modifiedFiles += 1
-            print(filenames[files])
+            remove_file(filenames[files])
 print('Out of ' + str(len(onlyfiles)) + ' files, ' + str(modifiedFiles) + ' are older than 31 days.')
-
-
-def get_date(filename):
-    lastmodified = os.path.getmtime(path + '\\' + filename)
-    print(lastmodified)
-    return lastmodified
-
-
-# get_date(filenames)
